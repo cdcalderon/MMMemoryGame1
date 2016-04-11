@@ -1,15 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SettingsController : MonoBehaviour {
+public class SettingsController : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    [SerializeField]
+    private GameObject settingsPanel;
+
+    [SerializeField]
+    private Animator settingsPanelAnim;
+
+    public void OpenSettingsPanel()
+    {
+        settingsPanel.SetActive(true);
+        settingsPanelAnim.Play("SlideIn");
+    }
+
+    public void CloseSettingsPanel()
+    {
+        StartCoroutine(CloseSettings());
+    }
+
+    IEnumerator CloseSettings()
+    {
+        settingsPanelAnim.Play("SlideOut");
+        yield return new WaitForSeconds(1f);
+        settingsPanel.SetActive(false);
+    }
 }
