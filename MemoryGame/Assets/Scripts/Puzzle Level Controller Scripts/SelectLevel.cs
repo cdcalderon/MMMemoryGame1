@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SelectLevel : MonoBehaviour
 {
+    [SerializeField]
+    private LoadPuzzleGame loadPuzzleGame;
 
     [SerializeField]
     private GameObject selectPuzzleMenuPanel, puzzleLevelSelectPanel;
@@ -17,6 +19,11 @@ public class SelectLevel : MonoBehaviour
         StartCoroutine (ShowPuzzleSelectMenu());
     }
 
+    public void SelectPuzzleSelectLevel()
+    {
+        int level = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        loadPuzzleGame.LoadPuzzle(level, selectedPuzzle);
+    }
     IEnumerator ShowPuzzleSelectMenu()
     {
         selectPuzzleMenuPanel.SetActive(true);
@@ -24,5 +31,11 @@ public class SelectLevel : MonoBehaviour
         puzzleLevelSelectAnim.Play("SlideOut");
         yield return new WaitForSeconds(1f);
         puzzleLevelSelectPanel.SetActive(false);
+    }
+
+    public void SetSelectedPuzzle(string selectedPuzzle)
+    {
+        this.selectedPuzzle = selectedPuzzle;
+        Debug.Log("The selected puzzle is " + selectedPuzzle);
     }
 }

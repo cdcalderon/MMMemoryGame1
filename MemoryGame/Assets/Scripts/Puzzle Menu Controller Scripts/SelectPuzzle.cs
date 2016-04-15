@@ -3,17 +3,22 @@ using System.Collections;
 
 public class SelectPuzzle : MonoBehaviour
 {
+    [SerializeField]
+    private SelectLevel selectLevel;
 
     [SerializeField]
     private GameObject selectPuzzleMenuPanel, puzzleLevelSelectPanel;
 
-    [SerializeField] private Animator selectPuzzleMenuAnim, puzzleLevelSelectAnim;
+    [SerializeField]
+    private Animator selectPuzzleMenuAnim, puzzleLevelSelectAnim;
 
-    private string selectPuzzle;
+    private string selectedPuzzle;
 
     public void SelectedPuzzle()
     {
-        selectPuzzle = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        selectedPuzzle = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+
+        selectLevel.SetSelectedPuzzle(selectedPuzzle);
 
         StartCoroutine(ShowPuzzleLevelSelectMenu());
     }
