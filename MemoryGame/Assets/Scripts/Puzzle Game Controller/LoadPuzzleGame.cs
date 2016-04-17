@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LoadPuzzleGame : MonoBehaviour
 {
+    [SerializeField]
+    private LayoutPuzzleButtons layoutPuzzleButtons;
 
     [SerializeField]
     private GameObject puzzleLevelSelectPanel;
@@ -30,7 +32,9 @@ public class LoadPuzzleGame : MonoBehaviour
     public void LoadPuzzle(int level, string puzzle)
     {
         this.puzzleLevel = level;
-        selectedPuzzle = puzzle;
+        this.selectedPuzzle = puzzle;
+
+        layoutPuzzleButtons.LayoutButtons(level, selectedPuzzle);
 
         switch (puzzleLevel)
         {

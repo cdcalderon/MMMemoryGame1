@@ -57,6 +57,7 @@
 -define:UNITY_TEAM_LICENSE
 -define:UNITY_PRO_LICENSE
 "Assets/Scripts/Puzzle Game Controller/CreatePuzzleButtonAndAnimators.cs"
+"Assets/Scripts/Puzzle Game Controller/LayoutPuzzleButtons.cs"
 "Assets/Scripts/Puzzle Game Controller/LoadPuzzleGame.cs"
 "Assets/Scripts/Puzzle Level Controller Scripts/SelectLevel.cs"
 "Assets/Scripts/Puzzle Menu Controller Scripts/SelectPuzzle.cs"
