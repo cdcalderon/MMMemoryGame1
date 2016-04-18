@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class LayoutPuzzleButtons : MonoBehaviour {
-//    [SerializeField]
-//    private SetupPuzzleGame setupPuzzleGame;
+    [SerializeField]
+    private SetupPuzzleGame setupPuzzleGame;
 
     [SerializeField]
     private Transform puzzleLevel1, puzzleLevel2, puzzleLevel3, puzzleLevel4, puzzleLevel5;
@@ -26,7 +26,7 @@ public class LayoutPuzzleButtons : MonoBehaviour {
         this.puzzleLevel = level;
         this.selectedPuzzle = puzzle;
 
-        //setupPuzzleGame.SetLevelAndPuzzle(puzzleLevel, selectedPuzzle);
+        setupPuzzleGame.SetLevelAndPuzzle(puzzleLevel, selectedPuzzle);
 
         LayoutPuzzle();
     }
@@ -62,7 +62,7 @@ public class LayoutPuzzleButtons : MonoBehaviour {
 
                 }
 
-               // setupPuzzleGame.SetPuzzleButtonsAndAnimators(level1Buttons, level1Anims);
+                setupPuzzleGame.SetPuzzleButtonsAndAnimators(level1Buttons, level1Anims);
 
                 break;
 
@@ -91,7 +91,7 @@ public class LayoutPuzzleButtons : MonoBehaviour {
 
                 }
 
-               // setupPuzzleGame.SetPuzzleButtonsAndAnimators(level2Buttons, level2Anims);
+                setupPuzzleGame.SetPuzzleButtonsAndAnimators(level2Buttons, level2Anims);
 
                 break;
 
@@ -120,7 +120,7 @@ public class LayoutPuzzleButtons : MonoBehaviour {
 
                 }
 
-               // setupPuzzleGame.SetPuzzleButtonsAndAnimators(level3Buttons, level3Anims);
+                setupPuzzleGame.SetPuzzleButtonsAndAnimators(level3Buttons, level3Anims);
 
                 break;
 
@@ -149,7 +149,7 @@ public class LayoutPuzzleButtons : MonoBehaviour {
 
                 }
 
-               // setupPuzzleGame.SetPuzzleButtonsAndAnimators(level4Buttons, level4Anims);
+                setupPuzzleGame.SetPuzzleButtonsAndAnimators(level4Buttons, level4Anims);
 
                 break;
 
@@ -178,7 +178,7 @@ public class LayoutPuzzleButtons : MonoBehaviour {
 
                 }
 
-               // setupPuzzleGame.SetPuzzleButtonsAndAnimators(level5Buttons, level5Anims);
+                setupPuzzleGame.SetPuzzleButtonsAndAnimators(level5Buttons, level5Anims);
 
                 break;
         }
